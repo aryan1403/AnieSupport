@@ -13,7 +13,7 @@ public class Anie extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         if(update.hasCallbackQuery()) 
-            new handleCallBack().handleRequest(update, null);
+            new handleCallBack().handleRequest(update, "");
         if(update.hasMessage() && update.getMessage().getText().startsWith("/")) 
             sendRequest(update);
     }
