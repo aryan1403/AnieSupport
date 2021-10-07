@@ -13,7 +13,7 @@ public class handleCallBack extends Anie implements Master {
     public void handleRequest(Update update, String cmd) {
         if(update.getCallbackQuery().getData().startsWith("ban")) {
             long uid = Integer.parseInt(update.getCallbackQuery().getData().substring(4));
-
+            System.out.println(uid);
             UnbanChatMember unbanChatMember = new UnbanChatMember(chatId(update), uid);
 
             try {
