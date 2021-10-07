@@ -67,7 +67,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>com.hellionbots.App</mainClass>
+              <mainClass>com.anie.App</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -77,7 +77,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.hellionbots.App</mainClass>
+              <mainClass>com.anie.App</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
