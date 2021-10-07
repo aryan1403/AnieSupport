@@ -17,7 +17,7 @@ public class kickme extends Anie implements Master {
                 execute(kickChatMember);
                 sendMessage(update, "Successfully Kicked " + update.getMessage().getFrom().getUserName());
             } catch (TelegramApiException e) {
-                e.printStackTrace();
+                sendMessage(update, e.getMessage());
             }
         }
     }
