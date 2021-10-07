@@ -6,6 +6,7 @@ import com.anie.Master;
 import org.telegram.telegrambots.meta.api.methods.groupadministration.GetChatAdministrators;
 import org.telegram.telegrambots.meta.api.methods.groupadministration.UnbanChatMember;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.chatmember.ChatMember;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -23,6 +24,8 @@ public class handleCallBack extends Anie implements Master {
                     execute(unbanChatMember);
                     SendMessage msg = new SendMessage(update.getCallbackQuery().getMessage().getChatId().toString(),
                             "Successfully Unbanned!\nI wish he would not do the same Again ;)");
+                    DeleteMessage message = new DeleteMessage(update.getCallbackQuery().getMessage().getChatId().toString(), update.getCallbackQuery().getMessage().getMessageId());
+                    execute(message);
                     execute(msg);
                 }
             } catch (TelegramApiException e) {
