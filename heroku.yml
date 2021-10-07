@@ -1,0 +1,5 @@
+build:
+  docker:
+    worker: Dockerfile
+run:
+  worker: java -jar target/anie_support-1.0-jar-with-dependencies.jar
