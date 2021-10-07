@@ -2,6 +2,7 @@ package com.anie;
 
 import com.anie.Helpers.cfg;
 import com.anie.Plugins.ban;
+import com.anie.Plugins.kickme;
 import com.anie.Plugins.CallBacks.handleCallBack;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -20,7 +21,8 @@ public class Anie extends TelegramLongPollingBot {
 
     public void sendRequest(Update update) {
         String cmd = update.getMessage().getText();
-        new ban().handleRequest(update, cmd);;
+        new ban().handleRequest(update, cmd);
+        new kickme().handleRequest(update, cmd);
     }
 
     public String handler() {
